@@ -10,7 +10,11 @@ static NSString * const kOmniAuthTwitterErrorDomain                    = @"SHOmn
 static NSString * const kOmniAuthTwitterErrorDomainConflictingAccounts = @"SHOmniAuthTwitterConflictingAccounts";
 
 static const NSInteger kOmniAuthTwitterErrorCodeConflictingAccounts = 500;
+
+@class ACAccount;
+
 #import "SHOmniAuthProvider.h"
 @interface SHOmniAuthTwitter : NSObject
 <SHOmniAuthProvider>
++(void)performReverseAuthForAccount:(ACAccount *)theAccount withBlock:(SHOmniAuthAccountResponseHandler)completionBlock;
 @end
